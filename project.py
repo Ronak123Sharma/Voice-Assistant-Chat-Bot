@@ -35,8 +35,12 @@ import sys
 import pyaudio
 import sounddevice as sd
 import numpy as np
+from dotenv import load_dotenv
+from os import getenv
 
+load_dotenv()
 
+api = getenv("gemi_api_key")
 
 
 
@@ -410,7 +414,7 @@ except Exception as e:
 
 def gimi(user):
 
-        palm.configure(api_key = "AIzaSyCnyIq75tojLZKyNo6oyiebJlZx0IqGFI0")
+        palm.configure(api_key = api)
 
         defaults = {
           'model': 'models/text-bison-001',
